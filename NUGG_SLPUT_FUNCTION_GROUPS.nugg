@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="SLPUT_FUNCTION_GROUPS">
+ <FUGR AREA="ZSLPUT_FG_SIMPLE" SPRAS="E" AREAT="Simple function group">
+  <functionGroupDocumentation/>
+  <mainprogram NAME="SAPLZSLPUT_FG_SIMPLE" VARCL="X" DBAPL="S" DBNA="D$" SUBC="F" APPL="S" RMAND="001" RLOAD="E" FIXPT="X" LDBNAME="D$S" UCCHECK="X">
+   <textPool/>
+   <source>*******************************************************************
+*   System-defined Include-files.                                 *
+*******************************************************************
+  INCLUDE LZSLPUT_FG_SIMPLETOP.              &quot; Global Declarations
+  INCLUDE LZSLPUT_FG_SIMPLEUXX.              &quot; Function Modules
+
+*******************************************************************
+*   User-defined Include-files (if necessary).                    *
+*******************************************************************
+* INCLUDE LZSLPUT_FG_SIMPLEF...              &quot; Subroutines
+* INCLUDE LZSLPUT_FG_SIMPLEO...              &quot; PBO-Modules
+* INCLUDE LZSLPUT_FG_SIMPLEI...              &quot; PAI-Modules
+* INCLUDE LZSLPUT_FG_SIMPLEE...              &quot; Events
+* INCLUDE LZSLPUT_FG_SIMPLEP...              &quot; Local class implement.
+* INCLUDE LZSLPUT_FG_SIMPLET99.              &quot; ABAP Unit tests</source>
+  </mainprogram>
+  <includeprograms>
+   <include NAME="LZSLPUT_FG_SIMPLETOP" VARCL="X" DBAPL="S" DBNA="D$" SUBC="I" APPL="S" RMAND="001" FIXPT="X" LDBNAME="D$S" UCCHECK="X">
+    <include_source></include_source>
+   </include>
+   <include NAME="LZSLPUT_FG_SIMPLETOP" VARCL="X" DBAPL="S" DBNA="D$" SUBC="I" APPL="S" RMAND="001" FIXPT="X" LDBNAME="D$S" UCCHECK="X">
+    <include_source>FUNCTION-POOL ZSLPUT_FG_SIMPLE.             &quot;MESSAGE-ID ..
+
+* INCLUDE LZSLPUT_FG_SIMPLED...              &quot; Local class definition</include_source>
+   </include>
+  </includeprograms>
+  <functionmodules>
+   <functionmodule NAME="ZSLPUTF_SIMPLE_01" STEXT="Simple function module 01">
+    <fm_source_new>WRITE `This is a simple function module without any kind of parameter/exception declared.`.</fm_source_new>
+    <functionModuleDocumentation/>
+   </functionmodule>
+   <functionmodule NAME="ZSLPUTF_SIMPLE_PARAMS_TYPE" STEXT="Simple function using all kinds of parameters">
+    <importing PARAMETER="IV_BY_REFERENCE" REFERENCE="X" TYP="C"/>
+    <importing PARAMETER="IV_BY_REFERENCE_OPT" OPTIONAL="X" REFERENCE="X" TYP="C"/>
+    <importing PARAMETER="IV_BY_REFERENCE_DEF" DEFAULT="&apos;I_REF_DEF&apos;" REFERENCE="X" TYP="C"/>
+    <importing PARAMETER="IV_BY_REFERENCE_DEF_OPT" DEFAULT="&apos;I_REF_DEF_AND_OPT&apos;" OPTIONAL="X" REFERENCE="X" TYP="C"/>
+    <importing PARAMETER="IV_BY_VALUE" TYP="C"/>
+    <importing PARAMETER="IV_BY_VALUE_OPT" OPTIONAL="X" TYP="C"/>
+    <importing PARAMETER="IV_BY_VALUE_DEF" DEFAULT="&apos;I_VAL_DEF&apos;" TYP="C"/>
+    <importing PARAMETER="IV_BY_VALUE_DEF_OPT" DEFAULT="&apos;I_VAL_DEF_AND_OPT&apos;" OPTIONAL="X" TYP="C"/>
+    <exporting PARAMETER="EV_BY_REFERENCE" REFERENCE="X" TYP="C"/>
+    <exporting PARAMETER="EV_BY_VALUE" TYP="C"/>
+    <changing PARAMETER="CV_BY_REFERENCE" REFERENCE="X" TYP="C"/>
+    <changing PARAMETER="CV_BY_REFERENCE_OPT" REFERENCE="X" TYP="C"/>
+    <changing PARAMETER="CV_BY_REFERENCE_DEF" DEFAULT="&apos;C_REF_DEF&apos;" REFERENCE="X" TYP="C"/>
+    <changing PARAMETER="CV_BY_REFERENCE_DEF_OPT" DEFAULT="&apos;C_REF_DEF_AND_OPT&apos;" REFERENCE="X" TYP="C"/>
+    <changing PARAMETER="CV_BY_VALUE" TYP="C"/>
+    <changing PARAMETER="CV_BY_VALUE_OPT" OPTIONAL="X" TYP="C"/>
+    <changing PARAMETER="CV_BY_VALUE_DEF" DEFAULT="&apos;C_VAL_DEF&apos;" TYP="C"/>
+    <changing PARAMETER="CV_BY_VALUE_DEF_OPT" DEFAULT="&apos;C_VAL_DEF_AND_OPT&apos;" OPTIONAL="X" TYP="C"/>
+    <tables PARAMETER="T_MANDATORY" TYP="STRINGTAB"/>
+    <tables PARAMETER="T_OPTIONAL" OPTIONAL="X" TYP="STRINGTAB"/>
+    <documentation PARAMETER="IV_BY_REFERENCE" KIND="P" INDEX=" 001"/>
+    <documentation PARAMETER="IV_BY_REFERENCE_OPT" KIND="P" INDEX=" 002"/>
+    <documentation PARAMETER="IV_BY_REFERENCE_DEF" KIND="P" INDEX=" 003"/>
+    <documentation PARAMETER="IV_BY_REFERENCE_DEF_OPT" KIND="P" INDEX=" 004"/>
+    <documentation PARAMETER="IV_BY_VALUE" KIND="P" INDEX=" 005"/>
+    <documentation PARAMETER="IV_BY_VALUE_OPT" KIND="P" INDEX=" 006"/>
+    <documentation PARAMETER="IV_BY_VALUE_DEF" KIND="P" INDEX=" 007"/>
+    <documentation PARAMETER="IV_BY_VALUE_DEF_OPT" KIND="P" INDEX=" 008"/>
+    <documentation PARAMETER="EV_BY_REFERENCE" KIND="P" INDEX=" 009"/>
+    <documentation PARAMETER="EV_BY_VALUE" KIND="P" INDEX=" 010"/>
+    <documentation PARAMETER="T_MANDATORY" KIND="P" INDEX=" 011"/>
+    <documentation PARAMETER="T_OPTIONAL" KIND="P" STEXT="Table with Strings" INDEX=" 012"/>
+    <documentation PARAMETER="CV_BY_REFERENCE" KIND="P" INDEX=" 013"/>
+    <documentation PARAMETER="CV_BY_REFERENCE_OPT" KIND="P" INDEX=" 014"/>
+    <documentation PARAMETER="CV_BY_REFERENCE_DEF" KIND="P" INDEX=" 015"/>
+    <documentation PARAMETER="CV_BY_REFERENCE_DEF_OPT" KIND="P" INDEX=" 016"/>
+    <documentation PARAMETER="CV_BY_VALUE" KIND="P" INDEX=" 017"/>
+    <documentation PARAMETER="CV_BY_VALUE_OPT" KIND="P" INDEX=" 018"/>
+    <documentation PARAMETER="CV_BY_VALUE_DEF" KIND="P" INDEX=" 019"/>
+    <documentation PARAMETER="CV_BY_VALUE_DEF_OPT" KIND="P" INDEX=" 020"/>
+    <fm_source>WRITE `No logic here, just testing the parameters.` ##NO_TEXT.</fm_source>
+    <functionModuleDocumentation/>
+   </functionmodule>
+   <functionmodule NAME="ZSLPUTF_SIMPLE_PARAMS_LIKE" STEXT="Simple function using all kinds of parameters">
+    <fm_source></fm_source>
+    <functionModuleDocumentation/>
+   </functionmodule>
+  </functionmodules>
+ </FUGR>
+</nugget>

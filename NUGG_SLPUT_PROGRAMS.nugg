@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="SLPUT_PROGRAMS">
+ <PROG NAME="ZSLPUT_PROGRAM_WITH_TOP_INCL" VARCL="X" SUBC="1" RMAND="510" RLOAD="E" FIXPT="X" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Program ZSLPUT_PROGRAM_WITH_TOP_INCL" LENGTH="36 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  ZSLPUT_PROGRAM_WITH_TOP_INCL
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+INCLUDE ZSLPUT_PROGRAM_WITH_TOPINC_TOP          .    &quot; global Data
+
+* INCLUDE ZSLPUT_PROGRAM_WITH_TOPINC_O01          .  &quot; PBO-Modules
+* INCLUDE ZSLPUT_PROGRAM_WITH_TOPINC_I01          .  &quot; PAI-Modules
+* INCLUDE ZSLPUT_PROGRAM_WITH_TOPINC_F01          .  &quot; FORM-Routines</source>
+ </PROG>
+ <PROG NAME="ZSLPUT_PROGRAM_WITH_TOPINC_TOP" VARCL="X" SUBC="I" RMAND="510" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZSLPUT_PROGRAM_WITH_TOPINC_TOP" LENGTH="38 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Include ZSLPUT_PROGRAM_WITH_TOPINC_TOP                    Report ZSLPUT_PROGRAM_WITH_TOP_INCL
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT   ZSLPUT_PROGRAM_WITH_TOP_INCL.</source>
+ </PROG>
+ <PROG NAME="ZSLPUT_PROGRAM_SIMPLE" VARCL="X" SUBC="1" RMAND="510" RLOAD="E" FIXPT="X" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Report ZSLPUT_PROGRAM" LENGTH="21 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  ZSLPUT_PROGRAM
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT  ZSLPUT_PROGRAM_SIMPLE.
+
+WRITE `This is the simplest program on ABAP.` ##NO_TEXT.</source>
+ </PROG>
+</nugget>
